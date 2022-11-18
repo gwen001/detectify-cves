@@ -44,7 +44,7 @@ wget https://cve.mitre.org/data/downloads/allitems.csv
   - login on Detectify: https://cs.detectify.com/login  
   - Browse to `Scanner modules` on the left menu: https://cs.detectify.com/dashboard/modules
   - Check the background requests performed by your browser and find `https://fedeo.cs.detectify.com/graphql` with a fat JSON response ~1.5Mo.
-  - Save the output (without HTTP headers) on the script directory as `detectify-modules.json`
+  - Save the output (with no HTTP headers) in the script directory as `detectify-modules.json`
 
 ## Usage
 
