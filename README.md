@@ -30,20 +30,20 @@ pip3 install -r requirements.txt
 
 ## Requirements
 
-1/ One cloned, go to the script directory:
+1/ Once cloned, go to the script directory:
 ```
 cd detectify-cves
 ```
 
-2/ Get CVE list:
+2/ Get the full CVEs database:
 ````
 wget https://cve.mitre.org/data/downloads/allitems.csv
 ````
 
-3/ Get Detectify modules list (you need a crowdsourced Detectify account):  
+3/ Get the full Detectify modules list (you need a crowdsourced Detectify account):  
   - login on Detectify: https://cs.detectify.com/login  
-  - Check `Scanner modules` on the left menu: https://cs.detectify.com/dashboard/modules
-  - Check the background requests performed by your browser, find `https://fedeo.cs.detectify.com/graphql` with huge JSON response ~1.5Mo.
+  - Browse to `Scanner modules` on the left menu: https://cs.detectify.com/dashboard/modules
+  - Check the background requests performed by your browser and find `https://fedeo.cs.detectify.com/graphql` with a fat JSON response ~1.5Mo.
   - Save the output (without HTTP headers) on the script directory as `detectify-modules.json`
 
 ## Usage
