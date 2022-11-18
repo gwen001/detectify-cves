@@ -40,7 +40,7 @@ def search_module( t_modules, cve, search ):
     return 0
 
 
-with open('detectify-modules-20211101.json',encoding='utf8',errors='ignore') as json_file:
+with open('detectify-modules.json',encoding='utf8',errors='ignore') as json_file:
     j_detectify = json.load(json_file)
     t_modules = j_detectify['data']
 

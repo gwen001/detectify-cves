@@ -18,19 +18,7 @@
 
 ## Description
 
-The script compares the official public list of CVEs and the list of [Detectify](https://detectify.com/) modules to find CVEs that don't have a modules yet.
-
-## Requirements
-
-- Get CVE list:
-````
-wget https://cve.mitre.org/data/downloads/allitems.csv
-````
-
-- Get Detectify modules list (you need a crowdsourced Detectify account):  
-  1. login on Detectify: https://cs.detectify.com/login  
-  2. Check `Scanner modules` on the left menu: https://cs.detectify.com/dashboard/modules
-
+The script compares the official public list of CVEs from [cve.mitre.org](https://cve.mitre.org/) and the list of [Detectify](https://detectify.com/) modules to find CVEs that don't have a modules yet.
 
 ## Install
 
@@ -39,6 +27,24 @@ git clone https://github.com/gwen001/detectify-cves
 cd detectify-cves
 pip3 install -r requirements.txt
 ```
+
+## Requirements
+
+1/ One cloned, go to the script directory:
+```
+cd detectify-cves
+```
+
+2/ Get CVE list:
+````
+wget https://cve.mitre.org/data/downloads/allitems.csv
+````
+
+3/ Get Detectify modules list (you need a crowdsourced Detectify account):  
+  - login on Detectify: https://cs.detectify.com/login  
+  - Check `Scanner modules` on the left menu: https://cs.detectify.com/dashboard/modules
+  - Check the background requests performed by your browser, find `https://fedeo.cs.detectify.com/graphql` with huge JSON response ~1.5Mo.
+  - Save the output (without HTTP headers) on the script directory as `detectify-modules.json`
 
 ## Usage
 
