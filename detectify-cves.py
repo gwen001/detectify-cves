@@ -34,15 +34,17 @@ else:
 def search_module( t_modules, cve, search ):
     if search == '' or search.lower() in cve[2].lower():
         for mod in t_modules:
-            if cve[0] in mod['module_name']:
-                return [ mod['module_name'], mod['user_name'], mod['date_added_string'] ]
+            if cve[0] in mod['moduleName']:
+                return [ mod['moduleName'], mod['userName'], mod['dateAdded'] ]
+            # if cve[0] in mod['module_name']:
+            #     return [ mod['module_name'], mod['user_name'], mod['date_added_string'] ]
         return 1
     return 0
 
 
 with open('detectify-modules.json',encoding='utf8',errors='ignore') as json_file:
     j_detectify = json.load(json_file)
-    t_modules = j_detectify['data']
+    t_modules = j_detectify['data']['scannerModules']
 
 
 with open('allitems.csv',encoding='utf8',errors='ignore') as csv_file:
@@ -57,7 +59,8 @@ with open('allitems.csv',encoding='utf8',errors='ignore') as csv_file:
                 if len(cve[2]) > 150:
                     output = output + "..."
                 if type(r) is list:
-                    output = output + colored(" -> %s - %s - %s" % (r[2],r[1],r[0][:100].strip()),"red")
+                    output = output + colored(" -> %s - %s - %s" % (r[1],r[2],r[0][:100]),"red")
+                    # output = output + colored(" -> %s - %s - %s" % (r[2],r[1],r[0][:100].strip()),"red")
                 output = output + "\n"
 
                 if detectify == 0 and not type(r) is list:
