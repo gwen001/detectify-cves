@@ -54,12 +54,14 @@ with open('allitems.csv',encoding='utf8',errors='ignore') as csv_file:
         if "** RESERVED **" not in cve[2]:
             r = search_module( t_modules, cve, search )
             if r != 0:
-                output = cve[0]+" - "+cve[2][:100].strip()
+                # output = cve[0]+" - "+cve[2][:100].strip()
                 # output = "https://cve.mitre.org/cgi-bin/cvename.cgi?name="+cve[0]+" - "+cve[2][:100].strip()
-                if len(cve[2]) > 150:
+                output = "https://cve.mitre.org/cgi-bin/cvename.cgi?name="+cve[0]+" - "+cve[2][:120].strip()
+                if len(cve[2]) > 120:
                     output = output + "..."
                 if type(r) is list:
-                    output = output + colored(" -> %s - %s - %s" % (r[1],r[2],r[0][:100]),"red")
+                    output = output + "\n" + colored("   -> %s - %s - %s" % (r[2],r[1],r[0]),"red")
+                    # output = output + colored(" -> %s - %s - %s" % (r[1],r[2],r[0][:100]),"red")
                     # output = output + colored(" -> %s - %s - %s" % (r[2],r[1],r[0][:100].strip()),"red")
                 output = output + "\n"
 
