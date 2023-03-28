@@ -18,7 +18,7 @@
 
 ## Description
 
-The script compares the official public list of CVEs from [cve.mitre.org](https://cve.mitre.org/) and the list of [Detectify](https://detectify.com/) modules to find CVEs that don't have a modules yet.
+This Python tool compares the official public list of CVEs from [cve.mitre.org](https://cve.mitre.org/) and the list of [Detectify](https://detectify.com/) modules to find CVEs that don't have a modules yet.
 
 ## Install
 
